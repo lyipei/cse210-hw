@@ -1,30 +1,34 @@
-class Activity
-{
-    private string _title;
-    private string _desc;
-    private int _duration;
+using System.Diagnostics.CodeAnalysis;
 
-    public Activity(int duration, string title, string desc)
+abstract class Activity
+{
+    protected string _title;
+    protected string _desc;
+    protected int _duration;
+
+    public Activity(string title, string desc)
     {
-        _duration = duration;
         _title = title;
         _desc = desc;
     }
-    public int DisplaySpinner()
+    public void Start()
     {
+        Console.WriteLine($"Starting {_title}");
+        Console.WriteLine($"{_desc}");
+        Console.WriteLine("Enter the duration of the activity in seconds: ");
+        _duration = int.Parse(Console.ReadLine());
+        Console.WriteLine("Prepare to begin...");
+        Timer.PauseWithAnimation(5);
+
+        RunActivity();
+
+        Console.WriteLine();
+        Console.WriteLine("Good Job!");
+        Console.WriteLine($"You have completed {_title} for {_duration} seconds.");
+        Timer.PauseWithAnimation(5);
+        Console.Clear();
 
     }
-    public int DisplayCOuntdown()
-    {
-
-    }
-    public string DisplayStaringMessage()
-    {
-        return 
-    }
-    public string DIsplayEndingMessage()
-    {
-
-    }
+    protected abstract void RunActivity();
 
 }
