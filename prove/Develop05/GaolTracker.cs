@@ -20,6 +20,18 @@ public class GoalTracker
             goal.DisplayProgress();
         }
     }
+    public void ApplyPenalty(string goalName)
+    {
+        var goal = _goals.FirstOrDefault(g => g.Name == goalName);
+        if (goal != null && goal is NegativeGoal)
+        {
+            goal.ApplyPenalty();
+        }
+        else
+        {
+            Console.WriteLine($"Goal '{goalName}' cannot receive penalties or not found.");
+        }
+    }
 
     public void RecordEvent(string goalName)
     {

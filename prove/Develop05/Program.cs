@@ -17,9 +17,10 @@ class Program
             Console.WriteLine("  3. Save Progress");
             Console.WriteLine("  4. Load Progress");
             Console.WriteLine("  5. Add New Goal");
-            Console.WriteLine("  6. Exit");
+            Console.WriteLine("  6. Apply Penalty");
+            Console.WriteLine("  7. Exit");
 
-            Console.Write("\nEnter your choice (1-6): ");
+            Console.Write("\nEnter your choice (1-7): ");
             string choice = Console.ReadLine();
 
             switch (choice)
@@ -74,6 +75,11 @@ class Program
                     Console.WriteLine($"New goal '{newGoalName}' added.");
                     break;
                 case "6":
+                    Console.Write("\nEnter the name of the goal to apply penalty: ");
+                    string penaltyGoalName = Console.ReadLine();
+                    tracker.ApplyPenalty(penaltyGoalName);
+                    break;
+                case "7":
                     exit = true;
                     break;
                 default:
