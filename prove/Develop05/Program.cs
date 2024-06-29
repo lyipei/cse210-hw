@@ -12,12 +12,12 @@ class Program
         while (!exit)
         {
             Console.WriteLine("\n===== Goal Tracker Menu =====");
-            Console.WriteLine("1. Display Goals");
-            Console.WriteLine("2. Record Event");
-            Console.WriteLine("3. Save Progress");
-            Console.WriteLine("4. Load Progress");
-            Console.WriteLine("5. Add New Goal");
-            Console.WriteLine("6. Exit");
+            Console.WriteLine("  1. Display Goals");
+            Console.WriteLine("  2. Record Event");
+            Console.WriteLine("  3. Save Progress");
+            Console.WriteLine("  4. Load Progress");
+            Console.WriteLine("  5. Add New Goal");
+            Console.WriteLine("  6. Exit");
 
             Console.Write("\nEnter your choice (1-6): ");
             string choice = Console.ReadLine();
